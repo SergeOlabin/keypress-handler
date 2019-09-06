@@ -17,6 +17,12 @@ document.addEventListener('keydown', handler);
 ![Legacy event handling](media/legacy-event.gif)
 
 ```js
+kh.onKey(35, handler);
+```
+
+![kh event handling](media/khevent-event-once.gif)
+
+```js
 kh.onKey(35, handler, { hold: true });
 ```
 
