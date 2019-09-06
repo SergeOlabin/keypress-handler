@@ -39,17 +39,23 @@ kh.run(interval);
 ```
 
 - runs the watcher
-  **interval** (_number, optional, 100 - default_) - value in _ms_ stands for interval how often en event is fired.
+  - **interval** (_number, optional, 100 - default_) - value in _ms_ stands for interval how often en event is fired.
 
 ```ts
 kh.onKey(keyCode, handler, options);
 ```
 
 - creates watcher for certain key
-  **keyCode** (_number|string, required_)- js keycode for a key https://keycode.info/
-  **handler** (_function, required_) - handler function for an event
-  **options** (_object, optional_) - configuration options for a watcher
-  **hold** (boolean) - _true_ if needed even firing on hold, _false_ - ONLY 1 event is fired
+  - **keyCode** (_number|string, required_)- js keycode for a key https://keycode.info/
+  - **handler** (_function, required_) - handler function for an event
+  - **options** (_object, optional_) - configuration options for a watcher
+    - **hold** (boolean) - _true_ if needed even firing on hold, _false_ - ONLY 1 event is fired
+
+```js
+kh.stop();
+```
+
+- stops handling events
 
 # Example
 
@@ -61,7 +67,7 @@ import kh from 'keypress-handler';
 class MyComponent extends React.Component {
   public componentDidMount() {
     kh.run(75);
-    kh.onKey(/* keycode */ 32, () => console.log('Keypress-handler works!'), {
+    kh.onKey(32, () => console.log('Keypress-handler works!'), {
       hold: true,
     });
   }
